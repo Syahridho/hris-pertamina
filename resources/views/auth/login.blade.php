@@ -1,10 +1,8 @@
 <x-guest-layout>
     <!-- Logo & Header -->
     <div class="flex flex-col items-center text-center mb-6">
-        <div class="flex items-center justify-center w-10 h-10 bg-[#E8192C] rounded-lg mb-3 shadow-sm">
-            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-white" aria-hidden="true">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
+        <div class="flex items-center justify-center mb-3">
+            <img src="{{ asset('logo.png') }}" alt="Logo Pertamina" class="w-16 h-16 object-contain" />
         </div>
         <h1 class="text-xl font-bold tracking-tight text-slate-900">HRIS PMC</h1>
         <p class="text-xs text-slate-500 mt-1">PT. Pertamina Maintenance & Construction</p>

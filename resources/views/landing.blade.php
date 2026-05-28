@@ -72,16 +72,14 @@
             gap: 10px;
         }
         .brand-mark {
-            width: 32px;
-            height: 32px;
-            background: var(--red);
-            border-radius: 6px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
-        .brand-mark svg { width: 16px; height: 16px; fill: #fff; }
+        .brand-mark img { width: 36px; height: 36px; object-fit: contain; }
         .brand-wordmark {
             font-size: 15px;
             font-weight: 700;
@@ -425,12 +423,10 @@
             color: var(--text-2);
         }
         .footer-logo .mark {
-            width: 24px; height: 24px;
-            background: var(--red);
-            border-radius: 4px;
+            width: 28px; height: 28px;
             display: flex; align-items: center; justify-content: center;
         }
-        .footer-logo .mark svg { width: 12px; height: 12px; fill: white; }
+        .footer-logo .mark img { width: 28px; height: 28px; object-fit: contain; }
 
         /* ─── DIVIDER LINE ───────────────────────────────── */
         .line { width: 32px; height: 2px; background: var(--red); display: block; margin-bottom: 20px; }
@@ -456,9 +452,9 @@
         <nav class="navbar-inner" aria-label="Navigasi utama">
             <div class="navbar-brand">
                 <div class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <img src="{{ asset('logo.png') }}" alt="Logo Pertamina" />
                 </div>
-                <div class="brand-wordmark">HRIS PMC <span>/ Pertamina MC</span></div>
+                <div class="brand-wordmark">HRIS Pertamina MC</div>
             </div>
             <div class="navbar-actions">
                
@@ -770,7 +766,7 @@
         <div class="footer-inner">
             <div class="footer-logo">
                 <div class="mark" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <img src="{{ asset('logo.png') }}" alt="Logo Pertamina" />
                 </div>
                 HRIS PMC
             </div>
