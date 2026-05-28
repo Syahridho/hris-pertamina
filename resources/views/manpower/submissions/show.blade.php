@@ -172,6 +172,20 @@
             <span class="info-label">Tanggal Pengajuan</span>
             <span class="info-value">{{ $submission->created_at->isoFormat('D MMMM Y') }}</span>
         </div>
+        @if($submission->start_date)
+        <div class="info-row">
+            <span class="info-label">Tanggal Mulai</span>
+            <span class="info-value">{{ $submission->start_date->isoFormat('D MMMM Y') }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Tanggal Selesai</span>
+            <span class="info-value">{{ $submission->end_date->isoFormat('D MMMM Y') }}</span>
+        </div>
+        <div class="info-row">
+            <span class="info-label">Total Durasi</span>
+            <span class="info-value">{{ $submission->total_days }} Hari</span>
+        </div>
+        @endif
         <div class="info-row">
             <span class="info-label">Supervisor Penyetuju</span>
             <span class="info-value">{{ $submission->supervisor->name ?? $submission->supervisor->username ?? 'Tidak Diketahui' }}</span>

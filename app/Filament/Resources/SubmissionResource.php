@@ -41,6 +41,15 @@ class SubmissionResource extends Resource
                 Forms\Components\TextInput::make('type')
                     ->label('Jenis')
                     ->disabled(),
+                Forms\Components\DatePicker::make('start_date')
+                    ->label('Tanggal Mulai')
+                    ->disabled(),
+                Forms\Components\DatePicker::make('end_date')
+                    ->label('Tanggal Selesai')
+                    ->disabled(),
+                Forms\Components\TextInput::make('total_days')
+                    ->label('Total Hari')
+                    ->disabled(),
                 Forms\Components\Textarea::make('description')
                     ->label('Deskripsi')
                     ->disabled(),
@@ -66,6 +75,17 @@ class SubmissionResource extends Resource
                 Tables\Columns\TextColumn::make('type')
                     ->label('Jenis')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('start_date')
+                    ->label('Mulai')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('end_date')
+                    ->label('Selesai')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('total_days')
+                    ->label('Durasi (Hari)')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->label('Status')
                     ->searchable(),

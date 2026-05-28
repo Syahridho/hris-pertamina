@@ -72,6 +72,7 @@ Route::prefix('manpower')
         Route::get('/submissions/create', [ManpowerSubmissionController::class, 'create'])->name('submissions.create');
         Route::post('/submissions', [ManpowerSubmissionController::class, 'store'])->name('submissions.store');
         Route::get('/submissions/{submission}', [ManpowerSubmissionController::class, 'show'])->name('submissions.show');
+        Route::delete('/submissions/{submission}', [ManpowerSubmissionController::class, 'destroy'])->name('submissions.destroy');
     });
 
 /*

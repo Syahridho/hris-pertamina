@@ -62,6 +62,18 @@
         <div class="info-item"><div class="info-label">Jenis</div><div class="info-value">{{ $submission->typeLabelAttribute }}</div></div>
         <div class="info-item"><div class="info-label">Status</div><div class="info-value"><span class="status-chip chip-{{ $submission->status }}">{{ ucfirst($submission->status) }}</span></div></div>
         <div class="info-item"><div class="info-label">Tanggal Ajukan</div><div class="info-value">{{ $submission->created_at->isoFormat('D MMMM Y') }}</div></div>
+        @if($submission->start_date)
+            <div class="info-item"><div class="info-label">Tanggal Mulai</div><div class="info-value">{{ $submission->start_date->isoFormat('D MMMM Y') }}</div></div>
+            <div class="info-item"><div class="info-label">Tanggal Selesai</div><div class="info-value">{{ $submission->end_date->isoFormat('D MMMM Y') }}</div></div>
+            <div class="info-item" style="grid-column: span 2; margin-top: 4px;">
+                <div class="info-label">Durasi Izin</div>
+                <div class="info-value">
+                    <span style="background: rgba(0, 61, 165, 0.08); color: var(--blue); padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 13px; display: inline-block;">
+                        {{ $submission->total_days }} Hari ({{ $submission->formattedDateRangeAttribute }})
+                    </span>
+                </div>
+            </div>
+        @endif
     </div>
 
     <div class="info-label" style="margin-bottom:8px">Keterangan</div>

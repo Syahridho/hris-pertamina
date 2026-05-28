@@ -78,6 +78,13 @@
                 {{ $sub->manpower?->username ?? '-' }}
                 &bull; {{ ucfirst($sub->type) }}
                 &bull; {{ $sub->created_at->diffForHumans() }}
+                @if($sub->start_date)
+                    <span style="display: flex; align-items: center; gap: 4px; margin-top: 4px; font-weight: 600; color: var(--text-muted);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 12px; height: 12px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        {{ $sub->formattedDateRangeAttribute }}
+                        <span style="background: rgba(0, 61, 165, 0.08); color: var(--blue); padding: 1px 6px; border-radius: 10px; font-size: 10px; font-weight: 700;">{{ $sub->total_days }} Hari</span>
+                    </span>
+                @endif
             </div>
         </div>
         <span class="status-chip chip-{{ $sub->status }}">{{ ucfirst($sub->status) }}</span>

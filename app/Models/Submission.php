@@ -20,11 +20,16 @@ class Submission extends Model
         'supervisor_id',
         'file',
         'status',
+        'start_date',
+        'end_date',
+        'total_days',
     ];
 
     protected $casts = [
         'type'   => 'string', // ENUM: cuti, sakit, izin
         'status' => 'string', // ENUM: pending, approved, rejected
+        'start_date' => 'date',
+        'end_date' => 'date',
     ];
 
     // =====================
@@ -64,5 +69,23 @@ class Submission extends Model
             'izin'  => 'Izin Khusus',
             default => ucfirst($this->type),
         };
+    }
+
+    /**
+     * Format the date range in Indonesian style.
+     */
+    public function getFormattedDateRangeAttribute(): string
+    {
+        if (!$this->start_date) {
+            return '-';
+        }
+        
+        $start = $this->start_date->isoFormat('D MMMM Y');
+        if (!$this->end_date || $this->start_date->equalTo($this->end_date)) {
+            return $start;
+        }
+        
+        $end = $this->end_date->isoFormat('D MMMM Y');
+        return "{$start} - {$end}";
     }
 }
