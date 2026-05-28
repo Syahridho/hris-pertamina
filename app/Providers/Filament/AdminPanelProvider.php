@@ -33,8 +33,9 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::hex('#E8192C'), // Pertamina Red
             ])
             ->brandName('HRIS PMC — Admin')
-            ->brandLogo(null)
-            ->favicon(null)
+            ->brandLogo(fn () => view('filament.brand'))
+            ->brandLogoHeight('2.5rem')
+            ->favicon(asset('logo.png'))
             // Gunakan guard superadmin, bukan default 'web'
             ->authGuard('superadmin')
             ->authPasswordBroker('superadmins')

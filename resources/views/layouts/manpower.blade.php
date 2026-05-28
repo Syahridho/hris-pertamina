@@ -65,12 +65,11 @@
             gap: 10px;
         }
         .header-logo {
-            width: 36px; height: 36px;
-            background: linear-gradient(135deg, var(--red), var(--red-dark));
-            border-radius: 10px;
+            width: 40px; height: 40px;
             display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
         }
-        .header-logo svg { width: 18px; height: 18px; fill: white; }
+        .header-logo img { width: 40px; height: 40px; object-fit: contain; }
         .header-title { font-size: 15px; font-weight: 700; }
         .header-subtitle { font-size: 11px; color: var(--text-muted); }
         .header-avatar {
@@ -159,7 +158,7 @@
     <header class="app-header">
         <div class="header-brand">
             <div class="header-logo">
-                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <img src="{{ asset('logo.png') }}" alt="Logo Pertamina" />
             </div>
             <div>
                 <div class="header-title">@yield('page-title', 'HRIS PMC')</div>

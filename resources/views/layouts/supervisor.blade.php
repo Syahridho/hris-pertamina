@@ -46,8 +46,8 @@
             align-items: center;
             gap: 10px;
         }
-        .brand-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--red),var(--red-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;}
-        .brand-icon svg{width:18px;height:18px;fill:white;}
+        .brand-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .brand-icon img{width:40px;height:40px;object-fit:contain;}
         .brand-name{font-size:14px;font-weight:700;}
         .brand-role{font-size:11px;color:var(--text-muted);}
         .sidebar-nav{flex:1;padding:12px 8px;overflow-y:auto;}
@@ -95,7 +95,7 @@
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
         <div class="brand-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <img src="{{ asset('logo.png') }}" alt="Logo Pertamina" />
         </div>
         <div>
             <div class="brand-name">HRIS PMC</div>
